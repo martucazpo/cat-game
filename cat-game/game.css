@@ -1,0 +1,51 @@
+.game-div {
+    height: 100%;
+    width: 100%;
+    max-width: 80%;
+    max-height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.score-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.target-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.number-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.game-btn {
+    font-size: 8em;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.target1 {
+    background-image: url('catdance.gif');
+}
+
+.target2 {
+    background-image: url('mew2.gif');
+}
+
+.target3 {
+    background-image: url('spinnercat.gif');
+}

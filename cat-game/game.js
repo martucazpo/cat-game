@@ -30,11 +30,11 @@ function setUpGame() {
     val1 = makeRange(age);
     val2 = makeRange(age);
     val3 = makeRange(age);
-    scoreDiv.innerText = score;
-    winsDiv.innerText = wins;
-    lossesDiv.innerText = losses;
-    playerNumber.innerText = playerNum;
-    targetNumber.innerText = targetNum;
+    scoreDiv.innerText = "Score: " + score;
+    winsDiv.innerText = "Wins: " + wins;
+    lossesDiv.innerText = "Losses: " + losses;
+    playerNumber.innerText = "Player Number: " + playerNum;
+    targetNumber.innerText = "Game Number: " + targetNum;
     target1.innerText = val1;
     target2.innerText = val2;
     target3.innerText = val3;
@@ -54,7 +54,7 @@ function gameNumbers() {
 
 function play(val) {
     playerNum = playerNum + val;
-    playerNumber.innerText = playerNum;
+    playerNumber.innerText = "Player Number: " + playerNum;
     match(playerNum, targetNum);
 }
 
@@ -69,14 +69,14 @@ function match(playerNum, targetNum) {
 
 function lose() {
     losses++;
-    lossesDiv.innerText = losses;
+    lossesDiv.innerText = "Losses: " + losses;
     matchScores();
     setUpGame();
 }
 
 function win() {
     wins++;
-    winsDiv.innerText = wins;
+    winsDiv.innerText = "Wins: " + wins;
     matchScores();
     setUpGame();
 }
@@ -87,52 +87,67 @@ function matchScores() {
         score--;
         wins = 0;
         losses = 0;
-        scoreDiv.innerText = score;
-        winsDiv.innerText = wins;
-        lossesDiv.innerText = losses;
+        scoreDiv.innerText = "Score: " + score;
+        winsDiv.innerText = "Wins: " + wins;
+        lossesDiv.innerText = "Losses: " + losses;
     } else if (wins === 3) {
         score++;
         wins = 0;
         losses = 0;
-        scoreDiv.innerText = score;
-        winsDiv.innerText = wins;
-        lossesDiv.innerText = losses;
+        scoreDiv.innerText = "Score: " + score;
+        winsDiv.innerText = "Wins: " + wins;
+        lossesDiv.innerText = "Losses: " + losses;
     }
 }
 
 function setUpDivs(){
     const scoreWrapper = document.createElement("div");
     scoreWrapper.setAttribute("id", "scoreWrapper");
+    scoreWrapper.setAttribute("class", "score-wrapper");
     const scoreDiv = document.createElement("div");
     scoreDiv.setAttribute("id", "scoreDiv");
+    scoreDiv.setAttribute("class", "score-div");
     scoreWrapper.appendChild(scoreDiv);
     const winsDiv = document.createElement("div");
     winsDiv.setAttribute("id", "winsDiv");
+    winsDiv.setAttribute("class", "wins-div");
     scoreWrapper.appendChild(winsDiv);
     const lossesDiv = document.createElement("div");
     lossesDiv.setAttribute("id", "lossesDiv");
+    lossesDiv.setAttribute("class", "losses-div");
     scoreWrapper.appendChild(lossesDiv);
     
     const targetWrapper = document.createElement("div");
     targetWrapper.setAttribute("id", "targetWrapper");
+    targetWrapper.setAttribute("class", "target-wrapper");
     const targetNumber = document.createElement("div");
     targetNumber.setAttribute("id", "targetNumber");
+    targetNumber.setAttribute("class", "target-number");
     targetWrapper.appendChild(targetNumber);
     const playerNumber = document.createElement("div");
     playerNumber.setAttribute("id", "playerNumber");
+    playerNumber.setAttribute("class", "player-number");
     targetWrapper.appendChild(playerNumber);
     
     const numberWrapper = document.createElement("div");
     numberWrapper.setAttribute("id", "numberWrapper");
+    numberWrapper.setAttribute("class", "number-wrapper");
+
     const target1 = document.createElement("button");
     target1.setAttribute("id", "target1");
+    target1.setAttribute("class", "game-btn target1");
     numberWrapper.appendChild(target1);
+
     const target2 = document.createElement("button");
     target2.setAttribute("id", "target2");
+    target2.setAttribute("class", "game-btn target2");
     numberWrapper.appendChild(target2);
+    
     const target3 = document.createElement("button");
     target3.setAttribute("id", "target3");
+    target3.setAttribute("class", "game-btn target3");
     numberWrapper.appendChild(target3);
+    
     
     const gameDiv = document.getElementById("gameDiv");
     gameDiv.appendChild(scoreWrapper);
